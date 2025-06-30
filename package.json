@@ -12,12 +12,18 @@
   },
   "dependencies": {
     "@prisma/client": "^6.10.1",
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
     "dotenv": "^16.6.0",
     "express": "^5.1.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
     "prisma": "^6.10.1"
   },
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.9",
     "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.0.4",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
