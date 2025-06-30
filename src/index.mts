@@ -5,8 +5,16 @@ dotenv.config();
 
 const app = express();
 
-
 export const prisma = new PrismaClient()
+
+
+// Middlewares
+app.use(express.json())
+
+// Routers
+import authRouters from "./routers/auth.routers.mts"
+app.use("/auth", authRouters)
+
 
 app.get('/', async(req, res) => {
   try {
