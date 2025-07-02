@@ -24,8 +24,10 @@ app.use(cookieParser());
 // Routers
 import authRoutes from "./routers/auth.routes.mts"
 import userRoutes from "./routers/user.routes.mts"
-app.use("/auth", authRoutes)
-app.use("/user", userRoutes)
+import expensesRoutes from "./routers/expenses.routes.mts";
+app.use("/auth", authRoutes);
+app.use("/user", userRoutes);
+app.use("/expenses", expensesRoutes)
 app.get('/', async(req, res) => {
   res.send("welcome to rexpenses-api");
 });
