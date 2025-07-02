@@ -4,11 +4,13 @@ import { verifyAuth } from "../middlewares/auth.middlewares.mts"
 const router = Router()
 
 router.get("/profile", verifyAuth, (req: Request, res: Response) => {
-    // const { id, username } = req.user;
+    const user = req.user;
+    if (!user) {
+        res.status(401).json({message: "unauthorized"})
+        return
+    }
 
-    // console.log(id, username)
-
-    res.status(200).json({data: "oke"})
+    res.status(200).json({message: "oke", data: {id: user.id, username: user.username} })
 })
 
 export default router

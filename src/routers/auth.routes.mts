@@ -120,4 +120,11 @@ router.post("/login", async (req: Request, res: Response) => {
     }
 })
 
+router.post("/logout", (req: Request, res: Response) => {
+    res.clearCookie('acc');
+    res.status(200).json({
+        message: "logout success"
+    })
+})
+
 export default router
