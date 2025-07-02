@@ -14,7 +14,6 @@ const registerSchema = Joi.object({
     username: Joi.string().min(3).max(20).required(),
     password: Joi.string().min(8).max(30).required()
 })
-
 export const validateRegister = validator(registerSchema)
 
 const postExpense = Joi.object({
@@ -22,5 +21,10 @@ const postExpense = Joi.object({
     description: Joi.string(),
     date: Joi.date().iso()
 })
-
 export const validatePostExpense = validator(postExpense);
+
+const updateExpense = Joi.object({
+    amount: Joi.number(),
+    description: Joi.string(),
+})
+export const validateUpdateExpense = validator(updateExpense);
