@@ -14,7 +14,7 @@ router.post("/register", async (req: Request, res: Response) => {
     if (error) {
         console.log("error :",error)
         res.status(400).json({
-            error: "invalid input data",
+            message: "invalid input data",
             details: error.details
         })
         return
@@ -50,7 +50,7 @@ router.post("/register", async (req: Request, res: Response) => {
         })        
     } catch (error) {
         console.log(error);
-        res.status(500).json({ error: "something went wrong", details: error})
+        res.status(500).json({ message: "something went wrong", details: error})
     }
 })
 
@@ -60,7 +60,7 @@ router.post("/login", async (req: Request, res: Response) => {
     if (error) {
         console.log("error :",error)
         res.status(400).json({
-            error: "invalid input data",
+            message: "invalid input data",
             details: error.details
         })
         return
@@ -76,7 +76,7 @@ router.post("/login", async (req: Request, res: Response) => {
 
         if (!foundUser) {
             res.status(403).json({
-                error: "invalid username or password"
+                message: "invalid username or password"
             })
             return
         }
@@ -86,7 +86,7 @@ router.post("/login", async (req: Request, res: Response) => {
 
         if (!correctPassword) {
             res.status(403).json({
-                error: "invalid username or password"
+                message: "invalid username or password"
             })
             return
         }
@@ -116,7 +116,7 @@ router.post("/login", async (req: Request, res: Response) => {
         })
     } catch (error) {
         console.log(error);
-        res.status(500).json({ error: "something went wrong", details: error})
+        res.status(500).json({ message: "something went wrong", details: error})
     }
 })
 
