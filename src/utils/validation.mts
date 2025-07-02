@@ -16,3 +16,11 @@ const registerSchema = Joi.object({
 })
 
 export const validateRegister = validator(registerSchema)
+
+const postExpense = Joi.object({
+    amount: Joi.number().required(),
+    description: Joi.string(),
+    date: Joi.date().iso()
+})
+
+export const validatePostExpense = validator(postExpense);

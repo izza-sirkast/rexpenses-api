@@ -15,7 +15,20 @@ datasource db {
 }
 
 model user {
-  id              Int    @id @default(autoincrement())
-  username        String @unique
+  id              Int        @id @default(autoincrement())
+  username        String     @unique
   hashed_password String
+  expenses        expenses[]
+}
+
+model expenses {
+  id          Int      @id @default(autoincrement())
+  user_id     Int
+  amount      Float
+  description String?
+  date        DateTime @default(now())
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  user user @relation(fields: [user_id], references: [id])
 }

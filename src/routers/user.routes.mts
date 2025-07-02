@@ -4,9 +4,9 @@ import { verifyAuth } from "../middlewares/auth.middlewares.mts"
 const router = Router()
 
 router.get("/profile", verifyAuth, (req: Request, res: Response) => {
-    const { id, username } = req.user;
+    // const { id, username } = req.user;
 
-    console.log(id, username)
+    // console.log(id, username)
 
     res.status(200).json({data: "oke"})
 })
